@@ -180,10 +180,24 @@ const ExperienceDetailPage = () => {
                       <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
                         <h4 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">{project.title}</h4>
                         <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{project.description}</p>
+                        <div className="space-y-3 mb-4">
+                          {project.tutor && (
+                            <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                              <Users className="w-4 h-4 mr-2" />
+                              <span className="font-medium">Tutor:</span> {project.tutor}
+                            </div>
+                          )}
+                          {project.duration && (
+                            <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                              <Calendar className="w-4 h-4 mr-2" />
+                              <span className="font-medium">Duration:</span> {project.duration}
+                            </div>
+                          )}
+                        </div>
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-gray-500">Project {index + 1}</span>
                           <Link 
-                            to={`/project/${project.id}`}
+                            to={`/experience/${experience.id}/project/${index}`}
                             className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm"
                           >
                             View Details

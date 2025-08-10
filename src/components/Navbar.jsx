@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from 'react'
-import { FaMoon, FaSun, FaBars, FaTimes } from 'react-icons/fa';
+import React, { useState } from 'react'
+import { FaMoon, FaSun, FaBars, FaTimes, FaSearch } from 'react-icons/fa';
 import { Link, useLocation } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
+import { useSearch } from '../context/SearchContext';
+import SearchBar from './SearchBar';
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const { isDark, toggleTheme } = useTheme();
+  const { isSearchOpen, openSearch, closeSearch } = useSearch();
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
 
   // Close menu on link click (mobile)
   const handleLinkClick = () => setMenuOpen(false);
@@ -25,11 +21,11 @@ const Navbar = () => {
       // Anchor links for home page
       return (
         <>
-          <a href="#home" className="hover:text-gray-400">Home</a>
-          <a href="#about" className="hover:text-gray-400">About Me</a>
-          <a href="#project" className="hover:text-gray-400">Projects</a>
-          <a href="#experiences" className="hover:text-gray-400">Experiences</a>
-          <a href="#contact" className="hover:text-gray-400">Contact</a>
+          <a href="#home" className="hover:text-gray-400 transition-colors duration-200">Home</a>
+          <a href="#about" className="hover:text-gray-400 transition-colors duration-200">About Me</a>
+          <a href="#project" className="hover:text-gray-400 transition-colors duration-200">Projects</a>
+          <a href="#experiences" className="hover:text-gray-400 transition-colors duration-200">Experiences</a>
+          <a href="#contact" className="hover:text-gray-400 transition-colors duration-200">Contact</a>
         </>
       );
     } else {
@@ -76,12 +72,11 @@ const Navbar = () => {
     if (isHomePage) {
       return (
         <>
-          <a href="#home" className="block hover:text-gray-400" onClick={handleLinkClick}>Home</a>
-          <a href="#about" className="block hover:text-gray-400" onClick={handleLinkClick}>About Me</a>
-          <a href="#skills" className="block hover:text-gray-400" onClick={handleLinkClick}>Skills</a>
-          <a href="#projects" className="block hover:text-gray-400" onClick={handleLinkClick}>Projects</a>
-          <a href="#experiences" className="block hover:text-gray-400" onClick={handleLinkClick}>Experiences</a>
-          <a href="#contact" className="block hover:text-gray-400" onClick={handleLinkClick}>Contact</a>
+          <a href="#home" className="block hover:text-gray-400 transition-colors duration-200" onClick={handleLinkClick}>Home</a>
+          <a href="#about" className="block hover:text-gray-400 transition-colors duration-200" onClick={handleLinkClick}>About Me</a>
+          <a href="#project" className="block hover:text-gray-400 transition-colors duration-200" onClick={handleLinkClick}>Projects</a>
+          <a href="#experiences" className="block hover:text-gray-400 transition-colors duration-200" onClick={handleLinkClick}>Experiences</a>
+          <a href="#contact" className="block hover:text-gray-400 transition-colors duration-200" onClick={handleLinkClick}>Contact</a>
         </>
       );
     } else {
@@ -126,8 +121,8 @@ const Navbar = () => {
   };
   
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white text-black dark:bg-black dark:text-white shadow px-8 md:px-16 lg:px-24">
-        <div className='container py-2 flex justify-center md:justify-between items-center'>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm text-black dark:bg-black/95 dark:text-white shadow-lg px-8 md:px-16 lg:px-24">
+        <div className='container py-4 flex justify-center md:justify-between items-center'>
             <div className='text-2xl font-bold'>Cabrel</div>
 
          <div className="space-x-6 hidden md:flex items-center">
@@ -137,11 +132,22 @@ const Navbar = () => {
           {/* Desktop Connect Me button and dark mode toggle */}
         <div className="hidden md:flex items-center space-x-4">
           <button
-            onClick={() => setDarkMode(!darkMode)}
+            onClick={openSearch}
+            className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors group relative"
+            aria-label="Open search"
+            title="Search (Ctrl+K)"
+          >
+            <FaSearch className="text-gray-600 dark:text-gray-400" />
+            <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+              Ctrl+K
+            </span>
+          </button>
+          <button
+            onClick={toggleTheme}
             className="focus:outline-none text-xl"
             aria-label="Toggle dark mode"
           >
-            {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon />}
+            {isDark ? <FaSun className="text-yellow-400" /> : <FaMoon />}
           </button>
           {renderContactButton()}
         </div>
@@ -163,12 +169,20 @@ const Navbar = () => {
         <div className="md:hidden bg-white dark:bg-black text-black dark:text-white px-8 py-4 space-y-4 shadow-lg absolute top-full left-0 w-full z-40">
           {renderMobileLinks()}
           {renderMobileContactButton()}
-            <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="w-full flex items-center justify-center mt-4 text-xl focus:outline-none"
+          <button
+            onClick={openSearch}
+            className="w-full flex items-center justify-center mt-4 p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+            aria-label="Open search"
+          >
+            <FaSearch className="w-5 h-5 text-gray-400 mr-2" />
+            <span>Search</span>
+          </button>
+          <button
+            onClick={toggleTheme}
+            className="w-full flex items-center justify-center mt-2 text-xl focus:outline-none p-3 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
             aria-label="Toggle dark mode"
           >
-            {darkMode ? (
+            {isDark ? (
               <>
                 <FaSun className="text-yellow-400 mr-2" /> 
               </>
@@ -181,6 +195,9 @@ const Navbar = () => {
           </button>
         </div>
       )}
+      
+      {/* Search Bar Modal */}
+      <SearchBar isOpen={isSearchOpen} onClose={closeSearch} />
     </nav>
   )
 }

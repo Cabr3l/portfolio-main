@@ -7,7 +7,7 @@ const Experiences = () => {
   return (
     <div className="bg-white text-black dark:bg-black dark:text-white" id="experiences">
       {/* Banner */}
-      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 py-20">
+      <div className="bg-blue-600 py-20">
         <div className="container mx-auto px-8 md:px-16 lg:px-24 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             My Experiences

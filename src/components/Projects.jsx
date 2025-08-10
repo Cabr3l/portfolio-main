@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink, Code, Brain, TrendingUp } from "lucide-react";
+import AnimatedStats from "./AnimatedStats";
 import employeeMSImage from "../assets/employee-ms.png";
 import bookMSImage from "../assets/admin-dashboard.png";
 import equityImage from "../assets/equity.png";
@@ -10,7 +11,7 @@ import courseraImage from "../assets/coursera.jpeg";
 
 const projects = [
   {
-    id: 1,
+    id: 'equity-prediction',
     name: "Trends prediction on the forex market (with LUSIS)",
     technologies: "Python, Pandas, NumPy, Scikit-learn, Matplotlib, seaborn, scipy",
     image: equityImage,
@@ -20,7 +21,7 @@ const projects = [
     color: "blue"
   },
   {
-    id: 2,
+    id: 'hiparis-bootcamp',
     name: "Hi!Pars Data Bootcamp",
     technologies: "Pandas, numpy, scikit-learn, seaborn",
     image: hiParisImage,
@@ -30,7 +31,7 @@ const projects = [
     color: "red"
   },
   {
-    id: 3,
+    id: 'ml-algorithms',
     name: "Machine Learning algorithms",
     technologies: "Scikit-Learn, ...",
     image: courseraImage,
@@ -40,7 +41,7 @@ const projects = [
     color: "blue"
   },
   {
-    id: 4,
+    id: 'risk-modeling-project',
     name: "Risk modeling on portfolios",
     technologies: "Scipy-Stats, numpy, matplotlib",
     image: courseraImage,
@@ -50,7 +51,7 @@ const projects = [
     color: "red"
   },
   {
-    id: 5,
+    id: 'moea-optimization',
     name: "Multi-Objective evolutionary algorithms",
     image: courseraImage,
     technologies: "Java",
@@ -60,7 +61,7 @@ const projects = [
     color: "blue"
   },
   {
-    id: 6,
+    id: 'stochastic-solver',
     name: 'Stochastic approach to solve differential equations',
     image: courseraImage,
     technologies: "Python",
@@ -75,7 +76,7 @@ const Projects = () => {
   return (
     <div className="bg-white text-black dark:bg-black dark:text-white" id="project">
       {/* Banner */}
-      <div className="bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-700 py-20">
+      <div className="bg-purple-600 py-20">
         <div className="container mx-auto px-8 md:px-16 lg:px-24 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             My Projects
@@ -168,7 +169,7 @@ const Projects = () => {
 
                   {/* Learn More button */}
                   <Link 
-                    to={`/project/${project.id}`}
+                    to={`/school-project/${project.id}`}
                     className={`inline-flex items-center justify-center w-full text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl ${
                       isBlueTheme 
                         ? 'bg-blue-600 hover:bg-blue-700' 
@@ -184,36 +185,36 @@ const Projects = () => {
           </div>
 
           {/* Statistics section */}
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="bg-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Code className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                {projects.length}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">Projects completed</p>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-red-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Brain className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                6
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">Areas of expertise</p>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-gray-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingUp className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                100%
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400">Projects completed</p>
-            </div>
+          <div className="mt-20">
+            <AnimatedStats
+              stats={[
+                {
+                  key: 'projects',
+                  value: projects.length,
+                  label: 'Projects completed',
+                  icon: Code,
+                  iconBg: 'bg-blue-600',
+                  description: 'Innovative solutions delivered'
+                },
+                {
+                  key: 'expertise',
+                  value: 6,
+                  label: 'Areas of expertise',
+                  icon: Brain,
+                  iconBg: 'bg-red-600',
+                  description: 'From ML to Finance'
+                },
+                {
+                  key: 'success',
+                  value: 100,
+                  suffix: '%',
+                  label: 'Success rate',
+                  icon: TrendingUp,
+                  iconBg: 'bg-gray-600',
+                  description: 'All projects completed'
+                }
+              ]}
+            />
           </div>
         </div>
       </div>

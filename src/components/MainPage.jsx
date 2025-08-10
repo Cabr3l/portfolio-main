@@ -4,6 +4,7 @@ import Home from './Home';
 import About from './About';
 import Experiences from './Experiences';
 import Projects from './Projects';
+import ProfessionalProjects from './ProfessionalProjects';
 import Contact from './Contact';
 import Footer from './Footer';
 
@@ -15,6 +16,7 @@ export default function MainPage() {
         <Home />
         <About />
         <Experiences/>
+        <ProfessionalProjects />
         <Projects />
         <Contact />
         <Footer />
