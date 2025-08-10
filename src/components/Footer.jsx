@@ -1,5 +1,7 @@
 import React from "react";
-import { FaFacebook, FaGithub, FaLinkedin, FaTelegram, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { personalInfo } from '../data/personalInfo';
 
 const Footer = () => {
   return (
@@ -7,9 +9,9 @@ const Footer = () => {
       <div className="container mx-auto px-8 md:px-16 lg:px-24">
         <div className="flex flex-col md:flex-row md:space-x-12 items-center mb-4">
           <div className="flex-1 mb-4 md:mb-0">
-            <h3 className="text-2xl font-bold mb-2">Bereket</h3>
+            <h3 className="text-2xl font-bold mb-2">{personalInfo.name}</h3>
             <p className="text-gray-400">
-            Developer based in the Addis, specializing in Frontend web development and Graphic Design
+            {personalInfo.title}, specializing in {personalInfo.specialization}
             </p>
           </div>
           <div className="flex-1 w-full">
@@ -18,11 +20,11 @@ const Footer = () => {
                 type="email"
                 placeholder="Your email"
                 className="w-full p-2 rounded-l-lg bg-gray-800 border border-gray-600 
-                focus:outline-none focus:border-green-400"
+                focus:outline-none focus:border-blue-500"
               />
               <button
                 type="submit"
-                className="bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 
                 py-2 rounded-r-lg"
               >
                 Subscribe
@@ -36,19 +38,19 @@ const Footer = () => {
           justify-between items-center"
         >
           <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} Bereket. All rights reserved.
+            &copy; {new Date().getFullYear()} {personalInfo.name}. All rights reserved.
           </p>
           <div className="flex space-x-4 my-4 md:my-0">
-            <a href="https://t.me/e_ephrem" className="text-gray-400 hover:text-white" target="_blank">
+            <a href={personalInfo.socialMedia.telegram} className="text-gray-400 hover:text-white" target="_blank">
               <FaTelegram />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white" target="_blank" >
-              <FaTwitter />
+            <a href={personalInfo.socialMedia.x} className="text-gray-400 hover:text-white" target="_blank" >
+              <FaXTwitter />
             </a>
-            <a href="https://www.linkedin.com/in/bereket-mengesha/" className="text-gray-400 hover:text-white" target="_blank">
+            <a href={personalInfo.socialMedia.linkedin} className="text-gray-400 hover:text-white" target="_blank">
               <FaLinkedin />
             </a>
-            <a href="https://github.com/ephrem20" className="text-gray-400 hover:text-white" target="_blank">
+            <a href={personalInfo.socialMedia.github} className="text-gray-400 hover:text-white" target="_blank">
               <FaGithub />
             </a>
           </div>

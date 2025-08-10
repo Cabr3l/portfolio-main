@@ -12,7 +12,7 @@ const Home = () => {
         </div>
         <h1 className='text-4xl font-bold  bg-white text-black dark:bg-black dark:text-white'>
             I'm {" "}
-            <span className='text-transparent bg-clip-text bg-blue-600 from-green-400 to-blue-500'>Cabrel</span>
+            <span className='text-blue-600 dark:text-blue-400'>Cabrel</span>
             , third year student at Ecole polytechnique. 
         </h1>
         <p className='mt-4 text-lg text-black-300'>
@@ -20,13 +20,13 @@ const Home = () => {
         </p>
         <div className='mt-8 space-x-4'>
             <button
-            className='bg-blue-600 from-green-400 to-blue-500 text-white
-            transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full'
+            className='bg-blue-600 hover:bg-blue-700 text-white
+            transform transition-all duration-300 hover:scale-105 px-6 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl'
             onClick={() => window.location.href = '#contact'}>
             Contact With Me</button>
             <button
-            className='bg-red-600 from-green-400 to-blue-500 text-white
-            transform transition-transform duration-300 hover:scale-105 px-4 py-2 rounded-full'
+            className='bg-gray-700 hover:bg-gray-800 text-white
+            transform transition-all duration-300 hover:scale-105 px-6 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl'
             onClick={() =>{window.open('/resume.png', '_blank','w-800,h-800');
             }}
             >Resume</button>
