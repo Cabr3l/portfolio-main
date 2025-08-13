@@ -7,7 +7,7 @@ export const experiencesData = [
     poste: "Scientific Mediator",
     entreprise: "Association Science Ouverte",
     periode: "2023 - 2024",
-    lieu: "Paris, France",
+    lieu: "Dancy, France",
     description: "Organized tailored workshops for middle and high school students, to promote scientific culture and critical thinking. Through hands-on activities like hackatons and escape games, I helped students develop a deeper understanding of scientific concepts and their applications.",
     image: imgSO,
     companyDescription: "The Association Science Ouverte is a non-profit organization dedicated to promoting scientific culture to the general public, particularly young people. Founded in 1998, it aims to democratize access to science and encourage critical thinking and scientific curiosity.",
@@ -20,46 +20,41 @@ export const experiencesData = [
     ],
     projects: [
       {
-        title: "Hackathon 'Science and Citizenship'",
-        description: "Organization of a 48-hour hackathon bringing together 50 high school students around environmental issues. The event focused on developing innovative solutions for sustainable development challenges through collaborative problem-solving and scientific methodology.",
-        duration: "48 hours",
-        tutor: "Dr. Marie Dubois - Head of Educational Programs",
+        title: "Hackathon 'Info Python'",
+        description: "Organization of a 25-hour hackathon bringing together 50 high school students around environmental issues. The event focused on developing innovative solutions for sustainable development challenges through collaborative problem-solving and scientific methodology.",
+        duration: "25 hours",
+        tutor: "Suzanne Nguyenn, scientific mediator",
         technicalApproach: [
           "Design thinking methodology for problem identification",
           "Agile project management with student teams",
-          "Scientific validation of proposed solutions",
-          "Integration of environmental science principles"
+          "Scientific validation of proposed solutions"
         ],
         deliverables: [
-          "Complete hackathon event planning and execution",
           "Student project presentations and documentation",
           "Evaluation framework for solution assessment",
           "Post-event impact analysis report"
         ]
       },
       {
-        title: "Escape Game 'The Secret Laboratory'",
-        description: "Creation of a scientific escape game to raise awareness of research challenges. This immersive experience combined scientific puzzles with storytelling to engage students in critical thinking and problem-solving.",
-        duration: "3 months",
-        tutor: "Prof. Jean-Luc Martin - Science Communication Specialist",
+        title: "Escape Game 'A la recherche du javelot'",
+        description: "Implementation of a scientific escape game with mathematical puzzles, helping students to understand the importance of mathematical thinking in daily life.",
+        duration: "1 week",
+        tutor: "Suzanne Nguyenn, scientific mediator",
         technicalApproach: [
-          "Gamification of scientific concepts",
           "Interactive puzzle design and testing",
           "Narrative development for engagement",
-          "Accessibility considerations for diverse audiences"
+          "Scientific puzzle collection and solutions"
         ],
         deliverables: [
           "Complete escape game kit with instructions",
-          "Scientific puzzle collection and solutions",
-          "Facilitator guide and training materials",
-          "Student feedback and learning outcomes analysis"
+          "Scientific puzzle collection and solutions"
         ]
       },
       {
-        title: "Workshops 'Maths in Play'",
-        description: "Development of fun workshops to make mathematics accessible and attractive. These interactive sessions used games, puzzles, and real-world applications to demystify mathematical concepts.",
-        duration: "6 months",
-        tutor: "Dr. Sophie Bernard - Mathematics Education Researcher",
+        title: "Workshops 'Maths en Jeans'",
+        description: "Development of research workshops to make mathematical research accessible and attractive. These interactive sessions used games, puzzles, and real-world applications to demystify mathematical concepts.",
+        duration: "4 months",
+        tutor: "François Gaudin, X1976",
         technicalApproach: [
           "Hands-on mathematical activities design",
           "Progressive difficulty progression",
@@ -69,8 +64,7 @@ export const experiencesData = [
         deliverables: [
           "Series of 12 mathematical workshop modules",
           "Activity materials and resources",
-          "Teacher training program",
-          "Student engagement metrics and outcomes"
+          "Presentations on polyominoes by the students"
         ]
       }
     ],
@@ -78,7 +72,6 @@ export const experiencesData = [
       "Pedagogy",
       "Group facilitation",
       "Scientific communication",
-      "Project management",
       "Creativity",
       "Adaptability"
     ],
@@ -88,80 +81,54 @@ export const experiencesData = [
       "Collaborative platforms"
     ],
     achievements: [
-      "40% increase in workshop participation",
-      "Creation of 15 new educational materials",
-      "Training of 200+ students in scientific methods"
+      "Training of 10 students in mathematical research methods"
     ]
   },
   {
     id: 2,
-    poste: "Intern in the models team",
+    poste: "Statistics and results assistant in the models team",
     entreprise: "Abeille Assurances, ex Aviva France",
-    periode: "2024",
-    lieu: "Paris, France",
-    description: "I develop models to enhance the performances of the company's ESG. My main focus was on the calibration of the inflation curves, and to make sure the scenarios realistic and reflected market prices.",
+    periode: "09/06/2025 - 05/09/2025",
+    lieu: "Bois-Colombes, France",
+    description: "I develop models to enhance the performances of the company's ESG. My main focus was on the calibration of the inflation curves, and to make sure the scenarios realistic and coherent with the actual models predictions.",
     image: imgAbeille,
     companyDescription: "Abeille Assurances, formerly Aviva France, is one of the leading insurance companies in France. Specializing in life insurance, savings and retirement, it manages more than 100 billion euros in assets and serves more than 2 million customers.",
     responsibilities: [
-      "Development of ESG (Environmental, Social, Governance) models to improve performance",
+      "Development of ESG (Economic Scenario Generator) models to improve performance",
       "Calibration of inflation curves to ensure consistency with market prices",
+      "Modeling default risk",
       "Validation and testing of the robustness of economic scenarios",
-      "Collaboration with the modeling team for process optimization",
-      "Analysis of market data and economic trends"
+      "Collaboration with the modeling team for process optimization"
     ],
     projects: [
       {
-        title: "Advanced ESG Model Development",
-        description: "Development of a comprehensive ESG model integrating environmental, social, and governance criteria in asset valuation and portfolio optimization. The model aimed to enhance risk-adjusted returns while maintaining compliance with regulatory requirements.",
+        title: "Default risk modeling",
+        description: "Development of a default risk model to enhance the performances of the company's ESG. The model aimed to enhance risk-adjusted returns while maintaining compliance with regulatory requirements.",
         duration: "4 months",
-        tutor: "Pierre Moreau - Senior Quantitative Analyst",
+        tutor: "Arthur Huynh - Actuary",
         technicalApproach: [
-          "Multi-factor ESG scoring methodology",
-          "Risk factor integration and correlation analysis",
-          "Portfolio optimization with ESG constraints",
-          "Backtesting and validation frameworks"
+          "Scientific review of the models for the default risk",
+          "Modeling of the default risk",
+          "Validation and testing of the robustness of the model"
         ],
         deliverables: [
-          "ESG model specification and documentation",
-          "Risk factor analysis and calibration results",
-          "Portfolio optimization algorithm implementation",
-          "Performance validation and backtesting report"
+          "Implemented code for the default risk model (LMN)",
+          "Risk factor analysis and calibration results"
         ]
       },
       {
-        title: "Inflation Curve Calibration System",
+        title: "Inflation Curve Calibration model",
         description: "Implementation of an automatic inflation curve calibration system to ensure consistency with market prices and improve the accuracy of economic scenario generation for risk management purposes.",
         duration: "3 months",
-        tutor: "Isabelle Leroy - Head of Risk Modeling",
+        tutor: "Arthur Huynh - Actuary",
         technicalApproach: [
-          "Market data integration and preprocessing",
-          "Curve fitting algorithms and optimization",
-          "Real-time calibration and validation",
-          "Scenario consistency checks and adjustments"
+          "Scientific review of the models for the inflation curve calibration",
+          "Modeling of the inflation curve",
+          "Validation and testing of the robustness of the model"
         ],
         deliverables: [
-          "Automated calibration system implementation",
-          "Calibration accuracy metrics and validation",
-          "Integration with existing risk management tools",
-          "User documentation and training materials"
-        ]
-      },
-      {
-        title: "Economic Scenario Validation Framework",
-        description: "Creation of a comprehensive validation framework to test the robustness of economic scenarios and ensure they accurately reflect market conditions and regulatory requirements.",
-        duration: "2 months",
-        tutor: "Thomas Durand - Risk Management Director",
-        technicalApproach: [
-          "Statistical validation methodologies",
-          "Stress testing and sensitivity analysis",
-          "Regulatory compliance verification",
-          "Documentation and audit trail creation"
-        ],
-        deliverables: [
-          "Validation framework specification and implementation",
-          "Testing results and compliance documentation",
-          "Process automation and monitoring tools",
-          "Audit trail and reporting templates"
+          "Implemented code for the inflation curve calibration model (LMN)",
+          "Calibration accuracy metrics and validation"
         ]
       }
     ],
@@ -174,16 +141,13 @@ export const experiencesData = [
       "Market finance"
     ],
     technologies: [
-      "Python",
-      "R",
-      "Excel VBA",
-      "Bloomberg Terminal",
-      "SQL databases"
+      "Python (NumPy, Pandas, SciPy, lmfit)",
+      "Excel",
     ],
     achievements: [
-      "25% improvement in ESG model accuracy",
       "30% reduction in inflation curve calibration time",
-      "Validation of 50+ economic scenarios"
+      "40% reduction in default risk model calibration time",
+      "2% increase on the Solvability II ratio"
     ]
   }
 ];

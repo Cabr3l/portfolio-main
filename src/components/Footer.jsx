@@ -87,6 +87,16 @@ const Footer = () => {
                   Experiences
                 </Link>
               </li>
+              <li>
+                <a href="/evaluation-framework.html" className="text-gray-300 hover:text-white transition-colors duration-200">
+                  Evaluation Framework
+                </a>
+              </li>
+              <li>
+                <Link to="/thoughts" className="text-gray-300 hover:text-white transition-colors duration-200">
+                  Thoughts
+                </Link>
+              </li>
             </ul>
           </div>
 

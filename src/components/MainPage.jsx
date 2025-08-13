@@ -5,6 +5,7 @@ import About from './About';
 import Experiences from './Experiences';
 import Projects from './Projects';
 import ProfessionalProjects from './ProfessionalProjects';
+import Thoughts from './Thoughts';
 import Contact from './Contact';
 import Footer from './Footer';
 
@@ -21,6 +22,7 @@ export default function MainPage() {
         <Experiences/>
         <ProfessionalProjects />
         <Projects />
+        <Thoughts />
         <Contact />
         <Footer />
     </div>

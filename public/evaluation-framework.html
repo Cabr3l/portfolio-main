@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Evaluation Framework - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .section-anchor {
+            scroll-margin-top: 100px;
+        }
+        .progress-bar {
+            transition: width 0.6s ease;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="../index.html" class="text-xl font-bold text-gray-800 hover:text-blue-600 transition-colors">
+                        <i class="fas fa-arrow-left mr-2"></i>Back to Portfolio
+                    </a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#introduction" class="text-gray-600 hover:text-blue-600 transition-colors">Overview</a>
+                    <a href="#framework" class="text-gray-600 hover:text-blue-600 transition-colors">Framework</a>
+                    <a href="#process" class="text-gray-600 hover:text-blue-600 transition-colors">Process</a>
+                    <a href="#tools" class="text-gray-600 hover:text-blue-600 transition-colors">Tools</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                Hackathon Evaluation Framework
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">
+                Comprehensive Guide for Evaluating Innovative Solutions
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="bg-white bg-opacity-20 rounded-lg px-6 py-3">
+                    <i class="fas fa-lightbulb mr-2"></i>
+                    Innovation & Creativity
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg px-6 py-3">
+                    <i class="fas fa-code mr-2"></i>
+                    Technical Implementation
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg px-6 py-3">
+                    <i class="fas fa-leaf mr-2"></i>
+                    Environmental Impact
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Quick Navigation</h2>
+                <p class="text-gray-600">Navigate through the framework sections</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="#introduction" class="card-hover bg-blue-50 rounded-lg p-6 text-center hover:bg-blue-100">
+                    <i class="fas fa-info-circle text-3xl text-blue-600 mb-4"></i>
+                    <h3 class="font-semibold text-gray-800">Introduction</h3>
+                    <p class="text-sm text-gray-600 mt-2">Overview and challenges</p>
+                </a>
+                <a href="#framework" class="card-hover bg-green-50 rounded-lg p-6 text-center hover:bg-green-100">
+                    <i class="fas fa-chart-bar text-3xl text-green-600 mb-4"></i>
+                    <h3 class="font-semibold text-gray-800">Evaluation Framework</h3>
+                    <p class="text-sm text-gray-600 mt-2">Detailed criteria and scoring</p>
+                </a>
+                <a href="#process" class="card-hover bg-purple-50 rounded-lg p-6 text-center hover:bg-purple-100">
+                    <i class="fas fa-cogs text-3xl text-purple-600 mb-4"></i>
+                    <h3 class="font-semibold text-gray-800">Judging Process</h3>
+                    <p class="text-sm text-gray-600 mt-2">Step-by-step evaluation</p>
+                </a>
+                <a href="#tools" class="card-hover bg-orange-50 rounded-lg p-6 text-center hover:bg-orange-100">
+                    <i class="fas fa-tools text-3xl text-orange-600 mb-4"></i>
+                    <h3 class="font-semibold text-gray-800">Tools & Resources</h3>
+                    <p class="text-sm text-gray-600 mt-2">Implementation support</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section id="introduction" class="section-anchor py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Introduction</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Hackathons are intensive, time-constrained events where participants collaborate to solve complex problems through innovative solutions. Effective assessment requires a structured, fair, and comprehensive evaluation framework.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-white rounded-lg p-6 shadow-md">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-clock text-3xl text-red-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Time Constraints</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Limited development time (24-48 hours)</li>
+                        <li>• Rapid prototyping requirements</li>
+                        <li>• Minimal testing opportunities</li>
+                    </ul>
+                </div>
+
+                <div class="card-hover bg-white rounded-lg p-6 shadow-md">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-users text-3xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Participant Diversity</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Varied skill levels and backgrounds</li>
+                        <li>• Different problem-solving approaches</li>
+                        <li>• Mixed technical expertise</li>
+                    </ul>
+                </div>
+
+                <div class="card-hover bg-white rounded-lg p-6 shadow-md">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-balance-scale text-3xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Evaluation Complexity</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Subjective innovation assessment</li>
+                        <li>• Balancing creativity with practicality</li>
+                        <li>• Fair comparison across projects</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Dimensions -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Assessment Dimensions</h2>
+                <p class="text-lg text-gray-600">Five key areas for comprehensive evaluation</p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Innovation & Creativity</h3>
+                            <p class="opacity-90">Originality, creativity, and disruption potential</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-bold">30%</div>
+                            <div class="text-sm opacity-75">30 points</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-lg p-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Technical Implementation</h3>
+                            <p class="opacity-90">Code quality, architecture, and functionality</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-bold">25%</div>
+                            <div class="text-sm opacity-75">25 points</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg p-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Problem-Solving Approach</h3>
+                            <p class="opacity-90">Understanding, methodology, and research depth</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-bold">20%</div>
+                            <div class="text-sm opacity-75">20 points</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg p-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Presentation & Communication</h3>
+                            <p class="opacity-90">Clarity, storytelling, and visual aids</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-bold">15%</div>
+                            <div class="text-sm opacity-75">15 points</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-red-500 to-red-600 rounded-lg p-6 text-white">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">Feasibility & Impact</h3>
+                            <p class="opacity-90">Scalability and environmental impact</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-3xl font-bold">10%</div>
+                            <div class="text-sm opacity-75">10 points</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Framework Section -->
+    <section id="framework" class="section-anchor py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Detailed Evaluation Framework</h2>
+                <p class="text-lg text-gray-600">Comprehensive scoring criteria for each dimension</p>
+            </div>
+
+            <!-- Innovation & Creativity -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-lightbulb text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Innovation & Creativity (30 points)</h3>
+                        <p class="text-gray-600">The heart of any hackathon solution</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-gray-800">Originality (10 points)</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Completely novel approach</span>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">9-10</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Significant modification</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">7-8</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Minor improvements</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm font-medium">5-6</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-gray-800">Creativity (10 points)</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Highly innovative use</span>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">9-10</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Creative combination</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">7-8</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Some creative elements</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm font-medium">5-6</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-gray-800">Disruption Potential (10 points)</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Fundamental change</span>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">9-10</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Significant improvement</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">7-8</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Moderate improvement</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm font-medium">5-6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Implementation -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-code text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Technical Implementation (25 points)</h3>
+                        <p class="text-gray-600">Quality and robustness of the technical solution</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-gray-800">Code Quality (8 points)</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Clean, readable, documented</span>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">7-8</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Generally good code</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">5-6</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Functional but poor structure</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm font-medium">3-4</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-gray-800">Architecture (8 points)</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Well-designed, scalable</span>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">7-8</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Good structure</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">5-6</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Basic structure</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm font-medium">3-4</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-semibold text-gray-800">Functionality (9 points)</h4>
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Fully functional</span>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">8-9</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Mostly functional</span>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-medium">6-7</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600">Partially functional</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm font-medium">4-5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Environmental Impact Assessment -->
+            <div class="bg-gradient-to-r from-green-500 to-green-600 rounded-lg shadow-lg p-6 text-white">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-leaf text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold">Environmental Impact Assessment (Bonus 10 points)</h3>
+                        <p class="opacity-90">Additional points for sustainability-focused solutions</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                        <h4 class="font-semibold mb-3">Carbon Footprint Reduction (4 points)</h4>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between items-center">
+                                <span>Significant reduction</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded">3-4</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Moderate reduction</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded">1-2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                        <h4 class="font-semibold mb-3">Resource Efficiency (3 points)</h4>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between items-center">
+                                <span>Highly efficient</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded">2-3</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Moderately efficient</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded">1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white bg-opacity-20 rounded-lg p-4">
+                        <h4 class="font-semibold mb-3">Long-term Sustainability (3 points)</h4>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between items-center">
+                                <span>Long-term solution</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded">2-3</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>Medium-term</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded">1</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Judging Process Section -->
+    <section id="process" class="section-anchor py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Judging Process</h2>
+                <p class="text-lg text-gray-600">Structured evaluation phases for fair assessment</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-6">
+                        1
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Initial Screening (Mentors)</h3>
+                        <p class="text-gray-600 mb-3">Eliminate non-functional solutions and perform basic quality checks</p>
+                        <div class="bg-blue-50 rounded-lg p-4">
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-gray-600">Time per project:</span>
+                                <span class="font-semibold text-blue-600">30 minutes</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm mt-2">
+                                <span class="text-gray-600">Focus:</span>
+                                <span class="text-blue-600">Functionality & Basic Quality</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-6">
+                        2
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Expert Panel Review</h3>
+                        <p class="text-gray-600 mb-3">Technical specialists and environmental experts evaluation</p>
+                        <div class="bg-green-50 rounded-lg p-4">
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-gray-600">Time per project:</span>
+                                <span class="font-semibold text-green-600">45 minutes</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm mt-2">
+                                <span class="text-gray-600">Focus:</span>
+                                <span class="text-green-600">Technical Depth & Environmental Impact</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-6">
+                        3
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Peer Evaluation</h3>
+                        <p class="text-gray-600 mb-3">Participants vote on other projects with anonymous feedback</p>
+                        <div class="bg-purple-50 rounded-lg p-4">
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-gray-600">Time per project:</span>
+                                <span class="font-semibold text-purple-600">20 minutes</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm mt-2">
+                                <span class="text-gray-600">Focus:</span>
+                                <span class="text-purple-600">Peer Perspective & Innovation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-6">
+                        4
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Final Presentation</h3>
+                        <p class="text-gray-600 mb-3">5-minute pitch with 3-minute Q&A and live demonstration</p>
+                        <div class="bg-orange-50 rounded-lg p-4">
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-gray-600">Time per project:</span>
+                                <span class="font-semibold text-orange-600">8 minutes</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm mt-2">
+                                <span class="text-gray-600">Focus:</span>
+                                <span class="text-orange-600">Communication & Demo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-6">
+                        5
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Combined Scoring</h3>
+                        <p class="text-gray-600 mb-3">Weighted average calculation and final ranking determination</p>
+                        <div class="bg-red-50 rounded-lg p-4">
+                            <div class="flex items-center justify-between text-sm">
+                                <span class="text-gray-600">Process:</span>
+                                <span class="font-semibold text-red-600">Weighted Average & Ranking</span>
+                            </div>
+                            <div class="flex items-center justify-between text-sm mt-2">
+                                <span class="text-gray-600">Outcome:</span>
+                                <span class="text-red-600">Winner Announcement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools and Resources Section -->
+    <section id="tools" class="section-anchor py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Tools and Resources</h2>
+                <p class="text-lg text-gray-600">Essential resources for implementing the evaluation framework</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-hover bg-white rounded-lg shadow-lg p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-laptop-code text-4xl text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Digital Scoring Platforms</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Devpost - Comprehensive management
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Hackathon.io - Judging tools
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Custom React/Node.js solutions
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-hover bg-white rounded-lg shadow-lg p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-clipboard-list text-4xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Assessment Templates</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Detailed rubric sheets
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Feedback collection forms
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Quick evaluation score cards
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card-hover bg-white rounded-lg shadow-lg p-6">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-camera text-4xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3 text-center">Documentation Tools</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Video recording for review
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Photo documentation
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            Code repository access
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Guidelines -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Implementation Guidelines</h2>
+                <p class="text-lg text-gray-600">Best practices for successful framework implementation</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-calendar-check text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Pre-Event Preparation</h3>
+                    <ul class="text-gray-600 space-y-2 text-left">
+                        <li>• Define clear criteria</li>
+                        <li>• Train judges on standards</li>
+                        <li>• Prepare scoring materials</li>
+                        <li>• Establish time constraints</li>
+                    </ul>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-play-circle text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">During the Event</h3>
+                    <ul class="text-gray-600 space-y-2 text-left">
+                        <li>• Maintain consistency</li>
+                        <li>• Document decisions</li>
+                        <li>• Provide feedback</li>
+                        <li>• Ensure fairness</li>
+                    </ul>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Post-Event Analysis</h3>
+                    <ul class="text-gray-600 space-y-2 text-left">
+                        <li>• Review process effectiveness</li>
+                        <li>• Gather participant feedback</li>
+                        <li>• Improve framework</li>
+                        <li>• Share results</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Hackathon Evaluation Framework</h3>
+                <p class="text-gray-300 mb-6">
+                    A comprehensive guide for evaluating innovative solutions in hackathon environments
+                </p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="../index.html" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fas fa-home mr-2"></i>Back to Portfolio
+                    </a>
+                    <a href="#introduction" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fas fa-arrow-up mr-2"></i>Back to Top
+                    </a>
+                </div>
+                <div class="border-t border-gray-700 pt-6">
+                    <p class="text-gray-400 text-sm">
+                        Version 1.0 • Last Updated: December 2024 • Author: Cabrel Tiotsop Ngueguim
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to top functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active state to navigation links
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        const sections = document.querySelectorAll('section[id]');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-600');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-blue-600');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

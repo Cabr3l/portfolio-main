@@ -26,6 +26,8 @@ const Navbar = () => {
           <a href="#project" className="hover:text-gray-400 transition-colors duration-200">Projects</a>
           <a href="#experiences" className="hover:text-gray-400 transition-colors duration-200">Experiences</a>
           <a href="#contact" className="hover:text-gray-400 transition-colors duration-200">Contact</a>
+          <a href="/evaluation-framework.html" className="hover:text-gray-400 transition-colors duration-200">Framework</a>
+          <Link to="/thoughts" className="hover:text-gray-400 transition-colors duration-200">Thoughts</Link>
         </>
       );
     } else {
@@ -37,6 +39,8 @@ const Navbar = () => {
           <Link to="/#project" className="hover:text-gray-400">Projects</Link>
           <Link to="/experiences" className="hover:text-gray-400">Experiences</Link>
           <Link to="/#contact" className="hover:text-gray-400">Contact</Link>
+          <a href="/evaluation-framework.html" className="hover:text-gray-400">Framework</a>
+          <Link to="/thoughts" className="hover:text-gray-400">Thoughts</Link>
         </>
       );
     }
@@ -77,6 +81,8 @@ const Navbar = () => {
           <a href="#project" className="block hover:text-gray-400 transition-colors duration-200" onClick={handleLinkClick}>Projects</a>
           <a href="#experiences" className="block hover:text-gray-400 transition-colors duration-200" onClick={handleLinkClick}>Experiences</a>
           <a href="#contact" className="block hover:text-gray-400 transition-colors duration-200" onClick={handleLinkClick}>Contact</a>
+          <a href="/evaluation-framework.html" className="block hover:text-gray-400 transition-colors duration-200" onClick={handleLinkClick}>Framework</a>
+          <Link to="/thoughts" className="block hover:text-gray-400 transition-colors duration-200" onClick={handleLinkClick}>Thoughts</Link>
         </>
       );
     } else {
@@ -88,6 +94,8 @@ const Navbar = () => {
           <Link to="/#projects" className="block hover:text-gray-400" onClick={handleLinkClick}>Projects</Link>
           <Link to="/experiences" className="block hover:text-gray-400" onClick={handleLinkClick}>Experiences</Link>
           <Link to="/#contact" className="block hover:text-gray-400" onClick={handleLinkClick}>Contact</Link>
+          <a href="/evaluation-framework.html" className="block hover:text-gray-400" onClick={handleLinkClick}>Framework</a>
+          <Link to="/thoughts" className="block hover:text-gray-400" onClick={handleLinkClick}>Thoughts</Link>
         </>
       );
     }

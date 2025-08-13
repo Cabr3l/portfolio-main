@@ -11,6 +11,17 @@ import courseraImage from "../assets/coursera.jpeg";
 
 const projects = [
   {
+    id: 'evaluation-framework',
+    name: "Hackathon Evaluation Framework",
+    technologies: "HTML, CSS, JavaScript, Tailwind CSS, Responsive Design",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+    learnMore: "/evaluation-framework.html",
+    theory: "Assessment Methodology, Judging Criteria, Environmental Impact",
+    category: "Framework",
+    color: "green",
+    isExternal: true
+  },
+  {
     id: 'equity-prediction',
     name: "Trends prediction on the forex market (with LUSIS)",
     technologies: "Python, Pandas, NumPy, Scikit-learn, Matplotlib, seaborn, scipy",
@@ -111,12 +122,17 @@ const Projects = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => {
               const isBlueTheme = project.color === "blue";
-              const primaryGradient = isBlueTheme 
-                ? "from-blue-500 to-blue-600" 
-                : "from-red-500 to-red-600";
-              const secondaryGradient = isBlueTheme 
-                ? "from-blue-600 to-blue-700" 
-                : "from-red-600 to-red-700";
+              const isGreenTheme = project.color === "green";
+              const primaryGradient = isGreenTheme 
+                ? "from-green-500 to-green-600"
+                : isBlueTheme 
+                  ? "from-blue-500 to-blue-600" 
+                  : "from-red-500 to-red-600";
+              const secondaryGradient = isGreenTheme 
+                ? "from-green-600 to-green-700"
+                : isBlueTheme 
+                  ? "from-blue-600 to-blue-700" 
+                  : "from-red-600 to-red-700";
 
               return (
                 <div key={project.id} className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 p-6 rounded-2xl hover:shadow-2xl 
@@ -130,7 +146,7 @@ const Projects = () => {
                       className="rounded-xl w-full h-48 object-cover shadow-lg"
                     />
                     <div className={`absolute top-3 right-3 px-3 py-1 text-white rounded-full text-xs font-semibold shadow-lg ${
-                      isBlueTheme ? 'bg-blue-600' : 'bg-red-600'
+                      isGreenTheme ? 'bg-green-600' : isBlueTheme ? 'bg-blue-600' : 'bg-red-600'
                     }`}>
                       {project.category}
                     </div>
@@ -168,17 +184,35 @@ const Projects = () => {
                   </div>
 
                   {/* Learn More button */}
-                  <Link 
-                    to={`/school-project/${project.id}`}
-                    className={`inline-flex items-center justify-center w-full text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl ${
-                      isBlueTheme 
-                        ? 'bg-blue-600 hover:bg-blue-700' 
-                        : 'bg-red-600 hover:bg-red-700'
-                    }`}
-                  >
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
+                  {project.isExternal ? (
+                    <a 
+                      href={project.learnMore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center justify-center w-full text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl ${
+                        project.color === "green" 
+                          ? 'bg-green-600 hover:bg-green-700' 
+                          : isBlueTheme 
+                            ? 'bg-blue-600 hover:bg-blue-700' 
+                            : 'bg-red-600 hover:bg-red-700'
+                      }`}
+                    >
+                      View Framework
+                      <ExternalLink className="w-4 h-4 ml-2" />
+                    </a>
+                  ) : (
+                    <Link 
+                      to={`/school-project/${project.id}`}
+                      className={`inline-flex items-center justify-center w-full text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl ${
+                        isBlueTheme 
+                          ? 'bg-blue-600 hover:bg-blue-700' 
+                          : 'bg-red-600 hover:bg-red-700'
+                      }`}
+                    >
+                      Learn More
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  )}
                 </div>
               );
             })}

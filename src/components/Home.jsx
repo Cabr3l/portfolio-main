@@ -29,6 +29,11 @@ const Home = () => {
             transform transition-all duration-300 hover:scale-105 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl'
             onClick={() => window.open('/resume.png', '_blank')}
             >View Resume</button>
+            <button
+            className='bg-purple-600 hover:bg-purple-700 text-white
+            transform transition-all duration-300 hover:scale-105 px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl'
+            onClick={() => document.getElementById('thoughts').scrollIntoView({ behavior: 'smooth' })}>
+            Mes Réflexions</button>
         </div>
     </div>
   )
