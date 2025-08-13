@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowLeft, Calendar, Users, Target, TrendingUp, MapPin, Building } from "lucide-react";
 import { experiencesData } from '../data/experiencesData';
 
-const ExperiencesPage = () => {
+export default function ExperiencesPage() {
+    useEffect(() => {
+        document.title = "Cabrel Tiotsop Ngueguim - Expériences Professionnelles";
+    }, []);
+
   return (
     <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white">
       {/* Header */}
@@ -170,5 +174,3 @@ const ExperiencesPage = () => {
     </div>
   );
 };
-
-export default ExperiencesPage;

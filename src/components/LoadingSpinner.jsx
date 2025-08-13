@@ -1,32 +1,39 @@
 import React from 'react';
 
-const LoadingSpinner = ({ size = 'md', text = 'Loading...' }) => {
+const LoadingSpinner = ({ size = 'md', color = 'blue' }) => {
   const sizeClasses = {
-    sm: 'w-8 h-8',
-    md: 'w-12 h-12',
-    lg: 'w-16 h-16',
-    xl: 'w-20 h-20'
+    sm: 'w-4 h-4',
+    md: 'w-8 h-8',
+    lg: 'w-12 h-12',
+    xl: 'w-16 h-16'
+  };
+
+  const colorClasses = {
+    blue: 'text-blue-600',
+    green: 'text-green-600',
+    red: 'text-red-600',
+    gray: 'text-gray-600'
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-8">
-      <div className={`${sizeClasses[size]} relative`}>
-        {/* Outer ring */}
-        <div className={`${sizeClasses[size]} border-4 border-gray-200 dark:border-gray-700 rounded-full animate-pulse`}></div>
-        
-        {/* Spinning ring */}
-        <div className={`${sizeClasses[size]} border-4 border-transparent border-t-blue-600 dark:border-t-blue-400 rounded-full absolute top-0 left-0 animate-spin`}></div>
-        
-        {/* Inner dot */}
-        <div className={`${sizeClasses[size]} bg-blue-600 dark:bg-blue-400 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse-slow`} style={{ width: '25%', height: '25%' }}></div>
+    <div className="flex justify-center items-center">
+      <div className={`${sizeClasses[size]} ${colorClasses[color]} animate-spin`}>
+        <svg className="animate-spin" viewBox="0 0 24 24" fill="none">
+          <circle
+            className="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="4"
+          />
+          <path
+            className="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+          />
+        </svg>
       </div>
-      
-      {text && (
-        <p className="mt-4 text-gray-600 dark:text-gray-400 font-medium animate-pulse">
-          {text}
-          <span className="loading-dots"></span>
-        </p>
-      )}
     </div>
   );
 };

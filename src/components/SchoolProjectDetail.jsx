@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Code, FileText, Calendar, User, Target, Download, Github, FileCode, BookOpen, Presentation, FileDown, Eye, BarChart3, Award, Clock, Users } from 'lucide-react';
 import Navbar from './Navbar';
@@ -365,6 +365,14 @@ const SchoolProjectDetail = () => {
   };
 
   const project = schoolProjects[id];
+
+  useEffect(() => {
+    if (project) {
+      document.title = `Cabrel Tiotsop Ngueguim - ${project.title} | Projet Scolaire`;
+    } else {
+      document.title = "Cabrel Tiotsop Ngueguim - Projet Scolaire";
+    }
+  }, [project]);
 
   if (!project) {
     return (

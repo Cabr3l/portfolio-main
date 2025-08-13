@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink, Code, Brain, TrendingUp, ArrowLeft } from "lucide-react";
 import employeeMSImage from "../assets/employee-ms.png";
@@ -194,7 +194,11 @@ const projects = [
   }
 ];
 
-const ProjectsPage = () => {
+export default function ProjectsPage() {
+    useEffect(() => {
+        document.title = "Cabrel Tiotsop Ngueguim - Projets & Réalisations";
+    }, []);
+
   return (
     <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white">
       {/* Header */}
@@ -332,5 +336,3 @@ const ProjectsPage = () => {
     </div>
   );
 };
-
-export default ProjectsPage;

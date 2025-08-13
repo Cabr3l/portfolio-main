@@ -1,166 +1,111 @@
-# Structure du Site Web - Portfolio de Cabrel
+# Site Structure Documentation
 
-## Vue d'ensemble
-Ce site web est un portfolio personnel développé avec React et Vite, présentant les compétences, expériences et projets de Cabrel Tiotsop Ngueguim, étudiant en mathématiques appliquées à l'École Polytechnique.
+## Overview
+This document describes the overall structure and navigation of the portfolio website.
 
-## Arborescence des fichiers
+## Site Architecture
 
-```
-portfolio-main/
-├── public/                          # Fichiers publics statiques
-│   ├── resume.png                   # CV de Cabrel
-│   └── favicon.ico                  # Icône du site
-├── src/                             # Code source principal
-│   ├── assets/                      # Ressources (images, icônes)
-│   │   └── tete.png                # Photo de profil
-│   ├── components/                  # Composants React
-│   │   ├── Home.jsx                # Page d'accueil
-│   │   ├── About.jsx               # Section À propos
-│   │   ├── Contact.jsx             # Section Contact
-│   │   ├── Footer.jsx              # Pied de page
-│   │   ├── Navbar.jsx              # Barre de navigation
-│   │   ├── Projects.jsx            # Section Projets
-│   │   ├── ProjectsPage.jsx        # Page dédiée aux projets
-│   │   ├── ProjectDetail.jsx       # Détail d'un projet
-│   │   ├── Experiences.jsx         # Section Expériences
-│   │   ├── ExperiencesPage.jsx     # Page dédiée aux expériences
-│   │   ├── ExperienceDetail.jsx    # Détail d'une expérience
-│   │   ├── Service.jsx             # Section Services
-│   │   ├── MainPage.jsx            # Page principale
-│   │   └── quantguide.py           # Script Python (à vérifier)
-│   ├── data/                       # Données centralisées
-│   │   ├── personalInfo.js         # Informations personnelles
-│   │   └── experiencesData.js      # Données des expériences
-│   ├── App.jsx                     # Composant principal de l'application
-│   ├── App.css                     # Styles de l'application
-│   ├── index.css                   # Styles globaux
-│   └── main.jsx                    # Point d'entrée de l'application
-├── node_modules/                    # Dépendances npm
-├── .git/                           # Répertoire Git
-├── .eslintrc.cjs                   # Configuration ESLint
-├── .gitignore                      # Fichiers à ignorer par Git
-├── index.html                      # Page HTML principale
-├── package.json                    # Configuration du projet et dépendances
-├── package-lock.json               # Verrouillage des versions des dépendances
-├── postcss.config.js               # Configuration PostCSS
-├── tailwind.config.js              # Configuration Tailwind CSS
-├── vite.config.js                  # Configuration Vite
-├── README.md                       # Documentation du projet
-├── PROJECTS_STRUCTURE.md           # Structure des projets (existant)
-└── SITE_STRUCTURE.md               # Ce fichier
-```
+### Main Pages
+1. **Homepage** (`/`)
+   - Hero section with personal introduction
+   - About me section
+   - Experience overview
+   - Project showcase
+   - Contact information
 
-## Structure des pages
+2. **Experiences** (`/experiences`)
+   - List of all work experiences
+   - Filtering and search capabilities
+   - Experience cards with key information
 
-### 1. Page d'accueil (Home.jsx)
-- **Fonction** : Présentation initiale de Cabrel
-- **Contenu** : Photo de profil, nom, titre, description courte
-- **Boutons** : Contact et CV
-- **Navigation** : Lien vers la section contact
+3. **Experience Detail** (`/experience/:id`)
+   - Detailed view of specific experience
+   - Project breakdowns
+   - Skills and technologies used
+   - Achievements and outcomes
 
-### 2. Section À propos (About.jsx)
-- **Fonction** : Présentation détaillée de Cabrel
-- **Contenu** : Biographie, compétences, formation
-- **Style** : Texte descriptif avec mise en forme
+4. **Projects** (`/projects`)
+   - Portfolio of completed projects
+   - Professional and academic projects
+   - Technology stack information
+   - Project outcomes
 
-### 3. Section Contact (Contact.jsx)
-- **Fonction** : Formulaire de contact et informations de contact
-- **Contenu** : 
-  - Formulaire (nom, email, message)
-  - Informations de contact (email, téléphone, adresse)
-  - Bouton d'envoi de message
-- **Navigation** : ID "contact" pour le scroll
+5. **Project Detail** (`/project/:id`)
+   - Detailed project information
+   - Technical specifications
+   - Screenshots and demos
+   - Implementation details
 
-### 4. Section Projets (Projects.jsx)
-- **Fonction** : Aperçu des projets principaux
-- **Contenu** : Liste des projets avec descriptions courtes
-- **Navigation** : Liens vers les pages détaillées des projets
+6. **School Projects** (`/school-project/:id`)
+   - Academic project details
+   - Written reports and presentations
+   - Technical documentation
+   - Academic achievements
 
-### 5. Page Projets (ProjectsPage.jsx)
-- **Fonction** : Page dédiée à tous les projets
-- **Contenu** : Liste complète des projets avec filtres
-- **Navigation** : Navigation entre projets
+## Navigation Structure
 
-### 6. Détail Projet (ProjectDetail.jsx)
-- **Fonction** : Page détaillée d'un projet spécifique
-- **Contenu** : Description complète, technologies, résultats
-- **Navigation** : Retour à la liste des projets
+### Primary Navigation
+- **Home**: Landing page
+- **Experiences**: Work history
+- **Projects**: Portfolio showcase
+- **Contact**: Get in touch
 
-### 7. Section Expériences (Experiences.jsx)
-- **Fonction** : Aperçu des expériences professionnelles
-- **Contenu** : Liste des expériences avec descriptions courtes
-- **Navigation** : Liens vers les pages détaillées
+### Secondary Navigation
+- **Experience Details**: Deep dive into specific roles
+- **Project Details**: Comprehensive project information
+- **School Projects**: Academic work showcase
 
-### 8. Page Expériences (ExperiencesPage.jsx)
-- **Fonction** : Page dédiée à toutes les expériences
-- **Contenu** : Liste complète des expériences
-- **Navigation** : Navigation entre expériences
+## Content Organization
 
-### 9. Détail Expérience (ExperienceDetail.jsx)
-- **Fonction** : Page détaillée d'une expérience spécifique
-- **Contenu** : Description complète, responsabilités, résultats
-- **Navigation** : Retour à la liste des expériences
+### Experience Section
+- **Work History**: Chronological list of positions
+- **Company Information**: Employer details
+- **Role Descriptions**: Job responsibilities
+- **Skills Applied**: Technologies and competencies
+- **Project Work**: Specific projects completed
 
-### 10. Section Services (Service.jsx)
-- **Fonction** : Présentation des services offerts
-- **Contenu** : Description des compétences et services
-- **Style** : Présentation des expertises
+### Project Section
+- **Professional Projects**: Work-related projects
+- **Academic Projects**: School and research work
+- **Personal Projects**: Independent development
+- **Collaborative Work**: Team projects
 
-### 11. Barre de navigation (Navbar.jsx)
-- **Fonction** : Navigation principale du site
-- **Contenu** : Menu de navigation, logo, thème sombre/clair
-- **Navigation** : Liens vers toutes les sections
+### Skills & Technologies
+- **Programming Languages**: Python, JavaScript, etc.
+- **Frameworks**: React, Django, etc.
+- **Tools**: Git, Docker, etc.
+- **Domain Knowledge**: Finance, ML, etc.
 
-### 12. Pied de page (Footer.jsx)
-- **Fonction** : Informations de contact et réseaux sociaux
-- **Contenu** : 
-  - Informations personnelles
-  - Formulaire d'inscription newsletter
-  - Liens vers réseaux sociaux
-  - Liens légaux
-- **Réseaux sociaux** : LinkedIn, GitHub, X (Twitter), Telegram
+## User Experience
 
-## Structure des données
+### Information Architecture
+- **Progressive Disclosure**: Overview to detail
+- **Logical Flow**: Natural navigation paths
+- **Consistent Layout**: Unified design language
+- **Responsive Design**: Mobile-first approach
 
-### 1. personalInfo.js
-- **Fonction** : Données centralisées de Cabrel
-- **Contenu** : 
-  - Informations personnelles
-  - Contact
-  - Éducation
-  - Compétences
-  - Technologies
-  - Réseaux sociaux
-  - Intérêts professionnels
+### Content Strategy
+- **Clear Hierarchy**: Easy to scan and navigate
+- **Rich Media**: Images, icons, and visual elements
+- **Interactive Elements**: Hover effects and animations
+- **Accessibility**: Screen reader friendly
 
-### 2. experiencesData.js
-- **Fonction** : Données des expériences professionnelles
-- **Contenu** : 
-  - Liste des expériences
-  - Détails de chaque expérience
-  - Dates et descriptions
+## Technical Implementation
 
-## Technologies utilisées
+### Routing
+- **React Router**: Client-side navigation
+- **Dynamic Routes**: Parameter-based URLs
+- **Nested Routes**: Hierarchical navigation
+- **Route Guards**: Access control if needed
 
-- **Frontend** : React.js
-- **Build tool** : Vite
-- **Styling** : Tailwind CSS
-- **Icons** : React Icons (FontAwesome)
-- **Linting** : ESLint
-- **Versioning** : Git
+### State Management
+- **Local State**: Component-level data
+- **Context API**: Global application state
+- **URL State**: Route parameters and query strings
+- **Persistent State**: User preferences and history
 
-## Responsive Design
-
-Le site est conçu pour être responsive avec :
-- Design mobile-first
-- Breakpoints Tailwind CSS
-- Flexbox et Grid pour la mise en page
-- Classes conditionnelles pour mobile/desktop
-
-## Thème
-
-Le site supporte :
-- Mode clair (par défaut)
-- Mode sombre (dark mode)
-- Transition automatique entre les thèmes
-- Persistance du choix de l'utilisateur
+### Performance
+- **Code Splitting**: Route-based lazy loading
+- **Image Optimization**: Responsive images
+- **Caching**: Browser and service worker caching
+- **Lazy Loading**: On-demand content loading

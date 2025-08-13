@@ -1,46 +1,64 @@
 import React, { useState, useEffect } from 'react';
-import { CheckCircle, XCircle, AlertTriangle, Info, X } from 'lucide-react';
+import { X, CheckCircle, AlertCircle, Info, XCircle } from 'lucide-react';
 
 const Notification = ({ 
-  type = 'info', 
-  title, 
   message, 
+  type = 'info', 
   duration = 5000, 
-  onClose,
-  position = 'top-right'
+  onClose, 
+  position = 'top-right' 
 }) => {
   const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    if (duration > 0) {
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+        onClose && onClose();
+      }, duration);
+
+      return () => clearTimeout(timer);
+    }
+  }, [duration, onClose]);
+
+  const handleClose = () => {
+    setIsVisible(false);
+    onClose && onClose();
+  };
 
   const typeConfig = {
     success: {
       icon: CheckCircle,
-      bgColor: 'bg-green-500',
-      textColor: 'text-green-800',
-      borderColor: 'border-green-200',
-      iconColor: 'text-green-600'
+      bgColor: 'bg-green-50 dark:bg-green-900/20',
+      borderColor: 'border-green-200 dark:border-green-700',
+      textColor: 'text-green-800 dark:text-green-200',
+      iconColor: 'text-green-400'
     },
     error: {
       icon: XCircle,
-      bgColor: 'bg-red-500',
-      textColor: 'text-red-800',
-      borderColor: 'border-red-200',
-      iconColor: 'text-red-600'
+      bgColor: 'bg-red-50 dark:bg-red-900/20',
+      borderColor: 'border-red-200 dark:border-red-700',
+      textColor: 'text-red-800 dark:text-red-200',
+      iconColor: 'text-red-400'
     },
     warning: {
-      icon: AlertTriangle,
-      bgColor: 'bg-yellow-500',
-      textColor: 'text-yellow-800',
-      borderColor: 'border-yellow-200',
-      iconColor: 'text-yellow-600'
+      icon: AlertCircle,
+      bgColor: 'bg-yellow-50 dark:bg-yellow-900/20',
+      borderColor: 'border-yellow-200 dark:border-yellow-700',
+      textColor: 'text-yellow-800 dark:text-yellow-200',
+      iconColor: 'text-yellow-400'
     },
     info: {
       icon: Info,
-      bgColor: 'bg-blue-500',
-      textColor: 'text-blue-800',
-      borderColor: 'border-blue-200',
-      iconColor: 'text-blue-600'
+      bgColor: 'bg-blue-50 dark:bg-blue-900/20',
+      borderColor: 'border-blue-200 dark:border-blue-700',
+      textColor: 'text-blue-800 dark:text-blue-200',
+      iconColor: 'text-blue-400'
     }
   };
+
+  const config = typeConfig[type];
+  const Icon = config.icon;
 
   const positionClasses = {
     'top-right': 'top-4 right-4',
@@ -51,69 +69,29 @@ const Notification = ({
     'bottom-center': 'bottom-4 left-1/2 transform -translate-x-1/2'
   };
 
-  const config = typeConfig[type];
-  const IconComponent = config.icon;
-
-  useEffect(() => {
-    if (duration > 0) {
-      const timer = setTimeout(() => {
-        handleClose();
-      }, duration);
-      return () => clearTimeout(timer);
-    }
-  }, [duration]);
-
-  const handleClose = () => {
-    setIsVisible(false);
-    if (onClose) {
-      setTimeout(onClose, 300); // Wait for animation to complete
-    }
-  };
-
   if (!isVisible) return null;
 
   return (
-    <div className={`fixed ${positionClasses[position]} z-50 animate-fade-in-up`}>
-      <div className={`max-w-sm w-full bg-white dark:bg-gray-800 shadow-lg rounded-lg pointer-events-auto border ${config.borderColor} overflow-hidden`}>
-        <div className="p-4">
-          <div className="flex items-start">
-            <div className="flex-shrink-0">
-              <IconComponent className={`h-6 w-6 ${config.iconColor}`} />
-            </div>
-            <div className="ml-3 w-0 flex-1">
-              {title && (
-                <p className={`text-sm font-medium ${config.textColor}`}>
-                  {title}
-                </p>
-              )}
-              {message && (
-                <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                  {message}
-                </p>
-              )}
-            </div>
-            <div className="ml-4 flex-shrink-0 flex">
-              <button
-                onClick={handleClose}
-                className="bg-white dark:bg-gray-800 rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
+    <div className={`fixed ${positionClasses[position]} z-50 transition-all duration-300 ease-in-out`}>
+      <div className={`${config.bgColor} ${config.borderColor} border rounded-lg p-4 shadow-lg max-w-sm`}>
+        <div className="flex items-start">
+          <div className="flex-shrink-0">
+            <Icon className={`w-5 h-5 ${config.iconColor}`} />
+          </div>
+          <div className="ml-3 flex-1">
+            <p className={`text-sm font-medium ${config.textColor}`}>
+              {message}
+            </p>
+          </div>
+          <div className="ml-4 flex-shrink-0">
+            <button
+              onClick={handleClose}
+              className={`${config.textColor} hover:opacity-75 transition-opacity`}
+            >
+              <X className="w-4 h-4" />
+            </button>
           </div>
         </div>
-        {/* Progress bar */}
-        {duration > 0 && (
-          <div className="h-1 bg-gray-200 dark:bg-gray-700">
-            <div 
-              className={`h-full ${config.bgColor} transition-all duration-300 ease-linear`}
-              style={{ 
-                width: '100%',
-                animation: `shrink ${duration}ms linear forwards`
-              }}
-            />
-          </div>
-        )}
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 
-import './App.css'
+import './index.css'
 import MainPage from './components/MainPage'
 import ExperiencesPage from './components/ExperiencesPage'
 import ExperienceDetailPage from './components/ExperienceDetailPage'
